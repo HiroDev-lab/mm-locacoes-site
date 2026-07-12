@@ -1,0 +1,38 @@
+/*
+Theme Name: M&M Locações Blog
+Description: Tema sob medida que replica o layout do site estático da M&M Locações (blog.html e post-artigo), reutilizando o css/style.css do site principal.
+Version: 1.0
+Author: M&M Locações
+*/
+
+/* Ajustes específicos do WordPress sobre o CSS do site principal */
+
+body.admin-bar .navbar { top: 46px; }
+
+/* Imagens inseridas pelo editor do WP dentro do artigo seguem o padrão .foto-artigo */
+.post-artigo .wp-block-image,
+.post-artigo figure {
+  margin: 2rem 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.post-artigo .wp-block-image img,
+.post-artigo figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Cards do blog: thumb com imagem destacada do WP */
+.card-blog .thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* "Ler mais" como link ativo */
+a.ler-mais { cursor: pointer; opacity: 1; text-decoration: none; }
+
+/* Paginação do WP no padrão do site */
+.mm-paginacao { display: flex; justify-content: center; gap: 1rem; margin: 3rem 0 4rem; font-weight: 600; }
+.mm-paginacao a, .mm-paginacao span { color: var(--laranja); }
+
+/* Aviso de nenhum post */
+.mm-vazio { text-align: center; padding: 3rem 0 5rem; color: var(--texto); }

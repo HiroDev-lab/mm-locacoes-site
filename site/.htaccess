@@ -1,0 +1,21 @@
+Options -MultiViews
+RewriteEngine On
+
+# Blog agora e WordPress em /blog/ — redireciona URLs antigas dos posts estaticos
+RewriteRule ^post-como-escolher-poltrona-reclinavel-pos-operatorio(\.html)?$ /blog/como-escolher-poltrona-reclinavel-pos-operatorio/ [R=301,L,NC]
+RewriteRule ^post-beneficios-poltrona-eletrica-lift-pos-operatorio(\.html)?$ /blog/beneficios-poltrona-eletrica-lift-pos-operatorio/ [R=301,L,NC]
+RewriteRule ^post-exercicios-leves-sentado-na-poltrona(\.html)?$ /blog/exercicios-leves-sentado-na-poltrona/ [R=301,L,NC]
+RewriteRule ^blog\.html$ /blog/ [R=301,L,NC]
+
+# /index.html -> /
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /%1 [R=301,L]
+
+# /pagina.html -> /pagina (redirecionamento visivel)
+RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.html[\s?] [NC]
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+
+# /pagina -> serve pagina.html internamente
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ $1.html [L]
