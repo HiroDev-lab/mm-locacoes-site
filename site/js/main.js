@@ -3,6 +3,15 @@
 (function () {
   'use strict';
 
+  /* ---------- Botão WhatsApp flutuante (injetado — vale p/ site estático E blog WP) ---------- */
+  if (document.body && !document.querySelector('.zap-flutuante')) {
+    var zapBtn = document.createElement('button');
+    zapBtn.className = 'zap-flutuante abrir-modal';
+    zapBtn.setAttribute('aria-label', 'Falar com a M&M pelo WhatsApp');
+    zapBtn.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.3-.2z"/></svg>';
+    document.body.appendChild(zapBtn);
+  }
+
   /* ---------- Menu mobile ---------- */
   var hamburger = document.getElementById('hamburger');
   var navLinks = document.getElementById('navLinks');

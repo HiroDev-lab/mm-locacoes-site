@@ -10,12 +10,11 @@ add_action('after_setup_theme', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('mm-poppins', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap', [], null);
     // CSS oficial do site principal (mesma folha usada na home/sobre-nos)
-    wp_enqueue_style('mm-site', 'https://mmlocacoespoltronas.com.br/css/style.css', [], '2');
+    wp_enqueue_style('mm-site', 'https://mmlocacoespoltronas.com.br/css/style.css', [], '4');
     wp_enqueue_style('mm-theme', get_stylesheet_uri(), ['mm-site'], '1.0');
     // JS oficial do site (menu mobile, reveal, modal WhatsApp, filtro do blog)
-    wp_enqueue_script('mm-main', 'https://mmlocacoespoltronas.com.br/js/main.js', [], '2', true);
+    wp_enqueue_script('mm-main', 'https://mmlocacoespoltronas.com.br/js/main.js', [], '3', true);
 });
 
 /** Primeira categoria do post (nome e slug) para a etiqueta e o filtro. */
