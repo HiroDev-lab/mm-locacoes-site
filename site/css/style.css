@@ -314,6 +314,12 @@ h1, h2, h3 { color: var(--escuro); font-weight: 700; line-height: 1.25; }
   border: 3px solid var(--creme);
   margin-left: -12px;
   transition: transform 0.3s var(--transicao);
+  /* enquanto a foto (lazy) não carrega, o texto alt fica invisível e
+     recortado dentro do círculo, sem sobrepor o resto da página */
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+  background: #EFE3D5;
 }
 
 .avatares img:first-child { margin-left: 0; }
