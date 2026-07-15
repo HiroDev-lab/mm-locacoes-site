@@ -37,7 +37,13 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* trava a rolagem lateral no celular (o hidden só no body não segura
+     o deslocamento criado pelos transforms dos reveals) */
+  overflow-x: hidden;
+  overflow-x: clip;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -1379,6 +1385,10 @@ h1, h2, h3 { color: var(--escuro); font-weight: 700; line-height: 1.25; }
   .hero::before { width: 380px; height: 380px; top: -140px; right: -120px; }
   .prova-social { margin-top: 2.4rem; }
 
+  /* no celular os reveals entram de baixo (translateX empurrava a página
+     para o lado e criava rolagem horizontal) */
+  .reveal-esq, .reveal-dir { transform: translateY(36px); }
+
   .faixa-conforto .grid { grid-template-columns: 1fr; gap: 2rem; }
 
   .card-poltrona, .card-poltrona:has(.foto-larga) { grid-template-columns: 1fr; text-align: center; }
@@ -1413,6 +1423,8 @@ h1, h2, h3 { color: var(--escuro); font-weight: 700; line-height: 1.25; }
   .navbar .logo img { height: 38px; }
   .indicada { padding: 4.5rem 0; }
   .faixa-cta .painel { padding: 2.6rem 1.4rem; }
+  /* folga para o WhatsApp flutuante não cobrir o copyright */
+  .footer { padding-bottom: 88px; }
 }
 
 /* ---------- Botão WhatsApp flutuante ---------- */
